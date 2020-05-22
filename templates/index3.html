@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>HELLO CLIENT</h1>
+    <form action="/3" method="post">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <button type="submit">Login</button>
+    </form>
+    <h2 id="reqData"></h2>
+
+    <script>
+      var htmlUpdate = document.getElementById('reqData');
+      console.log("HI");
+      var agent = '{{ reqData|safe }}';
+
+      console.log("HI");
+      htmlUpdate.textContent = "You posted " + agent;
+    </script>
+  </body>
+</html>
