@@ -6,7 +6,12 @@
   </head>
   <body>
     <h1>HELLO CLIENT</h1>
-    <p>This content is served to you by....</p>
-    <h2>The server</h2>
+    <p id="userAgent"></p>
+
+    <script>
+      var htmlUpdate = document.getElementById('userAgent');
+      var agent = '{{ userAgent|safe }}';
+      htmlUpdate.textContent = "I know you are using " + agent;
+    </script>
   </body>
 </html>
